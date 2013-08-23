@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+	<head>
+			<meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<title>PixImGen Gui</title>
+			<style>
+				body {
+					font-family: Helvetica;
+					line-height: 1.45em;
+					font-size: 1em;
+				}
+				.main {
+					width:400px;
+					margin:0 auto;
+				}
+				input[type=text] {
+					width:100%;
+				}
+				#imgout img {
+					width:48%;
+				}
+				#imgout img:nth-of-type(even) {
+					float: right;
+				}
+			</style>
+	</head>
+	<body>
+		<div class="main">
+			<h1>PixImGen GUI</h1>
+			<h2>Settings</h2>
+			<form action="imgout.php" id="settings" method="post">
+				<p>
+					The same seed creates the same image.<br>
+					If let empty, it generates one for you, different each time.
+					<input type="text" name="seed" id="seed" placeholder="seed">
+				</p>
+				<p>
+					How big do you want your blocks to be?<br>
+					A blocksize of 25 - which is the default - will make your blocks be 25x25 big.
+					<input type="text" name="blocksize" id="blocksize" placeholder="blocksize">
+				</p>
+				<p>
+					How many blocks wide do you want your image to be?<br>
+					A width of 10 - which is the default - at a blocksize of 25 will make your image 250 pixels wide.
+					<input type="text" name="width" id="width" placeholder="width">
+				</p>
+				<p>
+					How many blocks high do you want your image to be?<br>
+					A height of 10 - which is the default - at a blocksize of 25 will make your image 250 pixels high.
+					<input type="text" name="height" id="height" placeholder="height">
+				</p>
+				<p>
+					.
+					<input type="text" name="minredsaturation" id="minredsaturation" placeholder="minredsaturation">
+				</p>
+				<p>
+					.
+					<input type="text" name="maxredsaturation" id="maxredsaturation" placeholder="maxredsaturation">
+				</p>
+				<p>
+					.
+					<input type="text" name="mingreensaturation" id="mingreensaturation" placeholder="mingreensaturation">
+				</p>
+				<p>
+					.
+					<input type="text" name="maxgreensaturation" id="maxgreensaturation" placeholder="maxgreensaturation">
+				</p>
+				<p>
+					.
+					<input type="text" name="minbluesaturation" id="minbluesaturation" placeholder="minbluesaturation">
+				</p>
+				<p>
+					.
+					<input type="text" name="maxbluesaturation" id="maxbluesaturation" placeholder="maxbluesaturation">
+				</p>
+				<input type="submit" value="Generate Image">
+				<input type="reset" value="Reset">
+			</form>
+			<h2>Output</h2>
+			<div id="imgout"></div>
+		</div>
+		<script src="jquery.min.js"></script>
+		<script>
+			$("#settings").submit(function(){
+				$.post("imgout.php", $(this).serialize(), function(data){
+						// $("#imgout").prepend($("<img>", {
+						// 	"src": "data:image/png;base64,"+data
+						// }));
+						alert(data);
+					}
+				);
+				return false;
+			});
+		</script>
+	</body>
+</html>
