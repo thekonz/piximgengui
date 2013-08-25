@@ -16,6 +16,10 @@
 				input[type=text] {
 					width: 100%;
 				}
+				#imgout img {
+					display: block;
+					max-width: 100%;
+				}
 			</style>
 	</head>
 	<body>
@@ -74,7 +78,6 @@
 			<div id="imgout"></div>
 		</div>
 		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-		<script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
 		<script>
 
 			$("#settings").submit(function(){
@@ -82,10 +85,6 @@
 						$("#imgout").prepend($("<img>", {
 							"src": "data:image/png;base64,"+data
 						}));
-						$("#imgout").masonry({
-							columnWidth: 100,
-							itemSelector: "img"
-						})
 					}
 				);
 				return false;
