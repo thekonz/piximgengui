@@ -17,6 +17,7 @@
 					width: 100%;
 				}
 				#imgout img, #imgout div {
+					display:inline-block;
 					max-width: 100%;
 				}
 			</style>
@@ -83,7 +84,7 @@
 				$.post("imgout.php", $(this).serialize(), function(data){
 						$("#imgout").prepend($("<div>").append($("<img>", {
 							"src": "data:image/png;base64,"+data
-						}));
+						})));
 					}
 				);
 				return false;
