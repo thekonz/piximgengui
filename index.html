@@ -16,13 +16,6 @@
 				input[type=text] {
 					width: 100%;
 				}
-				#imgout img {
-					max-width: 48%;
-					float:left;
-				}
-				#imgout img:nth-of-type(even) {
-					float: right;
-				}
 			</style>
 	</head>
 	<body>
@@ -78,16 +71,17 @@
 				<input type="reset" value="Reset">
 			</form>
 			<h2>Output</h2>
-			<div id="imgout"></div>
+			<div id="imgout" class="js-masonry"
+  data-masonry-options="{ 'columnWidth': '50%', 'itemSelector': 'img' }"></div>
 		</div>
 		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+		<script src="http://masonry.desandro.com/masonry.pkgd.min.js"></script>
 		<script>
 			$("#settings").submit(function(){
 				$.post("imgout.php", $(this).serialize(), function(data){
 						$("#imgout").prepend($("<img>", {
 							"src": "data:image/png;base64,"+data
 						}));
-						// alert(data);
 					}
 				);
 				return false;
