@@ -82,7 +82,7 @@
 
 			$("#settings").submit(function(){
 				$.post("imgout.php", $(this).serialize(), function(data){
-						$("#imgout").prepend(" "+$("<img>", {
+						$("#imgout").prepend($("<img>", {
 							"src": "data:image/png;base64,"+data
 						}));
 					}
