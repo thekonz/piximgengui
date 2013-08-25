@@ -35,62 +35,61 @@
 				<p>
 					The same seed creates the same image.<br>
 					If let empty, it generates one for you, different each time.
-					<input type="text" name="seed" id="seed" placeholder="seed">
+					<input type="text" name="seed" id="seed" placeholder="seed" />
 				</p>
 				<p>
 					How big do you want your blocks to be?<br>
 					A blocksize of 25 - which is the default - will make your blocks be 25x25 big.
-					<input type="text" name="blocksize" id="blocksize" placeholder="blocksize">
+					<input type="text" name="blocksize" id="blocksize" placeholder="blocksize" />
 				</p>
 				<p>
 					How many blocks wide do you want your image to be?<br>
 					A width of 10 - which is the default - at a blocksize of 25 will make your image 250 pixels wide.
-					<input type="text" name="width" id="width" placeholder="width">
+					<input type="text" name="width" id="width" placeholder="width" />
 				</p>
 				<p>
 					How many blocks high do you want your image to be?<br>
 					A height of 10 - which is the default - at a blocksize of 25 will make your image 250 pixels high.
-					<input type="text" name="height" id="height" placeholder="height">
+					<input type="text" name="height" id="height" placeholder="height" />
 				</p>
 				<p>
 					Minimum saturation of the color red.<br>
 					Ranges between 0 and 255. Default is 0.
-					<input type="range" min="0" max="255" step="1" value="0" name="minredsaturation" id="minredsaturation">
+					<input type="range" min="0" max="255" step="1" value="0" name="minredsaturation" />
 				</p>
 				<p>
 					Maximum saturation of the color red.<br>
 					Ranges between 0 and 255. Default is 255.
-					<input type="range" min="0" max="255" step="1" value="255" name="maxredsaturation" id="maxredsaturation">
+					<input type="range" min="0" max="255" step="1" value="255" name="maxredsaturation" />
 				</p>
 				<p>
 					Minimum saturation of the color green.<br>
 					Ranges between 0 and 255. Default is 0.
-					<input type="range" min="0" max="255" step="1" value="0" name="mingreensaturation" id="mingreensaturation">
+					<input type="range" min="0" max="255" step="1" value="0" name="mingreensaturation" />
 				</p>
 				<p>
 					Maximum saturation of the color green.<br>
 					Ranges between 0 and 255. Default is 255.
-					<input type="range" min="0" max="255" step="1" value="255" name="maxgreensaturation" id="maxgreensaturation">
+					<input type="range" min="0" max="255" step="1" value="255" name="maxgreensaturation" />
 				</p>
 				<p>
 					Minimum saturation of the color blue.<br>
 					Ranges between 0 and 255. Default is 0.
-					<input type="range" min="0" max="255" step="1" value="0" name="minbluesaturation" id="minbluesaturation">
+					<input type="range" min="0" max="255" step="1" value="0" name="minbluesaturation" />
 				</p>
 				<p>
 					Maximum saturation of the color blue.<br>
 					Ranges between 0 and 255. Default is 255.
-					<input type="range" min="0" max="255" step="1" value="255" name="maxbluesaturation" id="maxbluesaturation">
+					<input type="range" min="0" max="255" step="1" value="255" name="maxbluesaturation" />
 				</p>
-				<input type="submit" value="Generate Image">
-				<input type="reset" value="Reset Form">
+				<input type="submit" value="Generate Image" />
+				<input type="reset" value="Reset Form" />
 			</form>
 			<h2>Output</h2>
 			<div id="imgout"></div>
 		</div>
 		<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 		<script>
-
 			$("#settings").submit(function(){
 				$.post("imgout.php", $(this).serialize(), function(data){
 						$("#imgout").prepend($("<img>", {
