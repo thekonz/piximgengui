@@ -16,12 +16,10 @@
 				input[type=text] {
 					width: 100%;
 				}
-				#imgout img, #imgout div {
+				#imgout img {
 					display:inline-block;
 					max-width: 100%;
-				}
-				#imgout div::after {
-					content: " ";
+					margin: 2px;
 				}
 			</style>
 	</head>
@@ -85,9 +83,9 @@
 
 			$("#settings").submit(function(){
 				$.post("imgout.php", $(this).serialize(), function(data){
-						$("#imgout").prepend($("<div>").append($("<img>", {
+						$("#imgout").prepend($("<img>", {
 							"src": "data:image/png;base64,"+data
-						})));
+						}));
 					}
 				);
 				return false;
