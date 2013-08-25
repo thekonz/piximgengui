@@ -1,11 +1,9 @@
 <?php
-error_reporting(E_ALL);
 require_once '../piximgen/PixImGen.php';
 $imggen = new PixImGen($_POST);
 try {
-	//header('content-type: image/png');
-	sprintf($imggen->getImage());
-	// print_r($imggen->settings);
+	header('content-type: image/png');
+	echo $imggen->getImage();
 } catch(Exception $e) {
 	echo $e->getMessage();
 }
