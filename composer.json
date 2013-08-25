@@ -1,0 +1,5 @@
+{
+	"require": {
+		"thekonz/piximgen": "1.0.*@dev"
+	}
+}
