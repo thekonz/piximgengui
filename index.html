@@ -18,7 +18,11 @@
 				}
 				#imgout img {
 					width: 48%;
+					image-rendering: -moz-crisp-edges;
+					image-rendering: -o-crisp-edges;
+					image-rendering: -webkit-optimize-contrast;
 					image-rendering: crisp-edges;
+					-ms-interpolation-mode: nearest-neighbor;
 				}
 				#imgout img:nth-of-type(even) {
 					float: right;
